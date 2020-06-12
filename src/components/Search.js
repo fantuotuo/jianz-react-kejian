@@ -3,6 +3,8 @@ import React from 'react';
 class SearchComp extends React.Component{
 	onChange(e){
 		let value=e.target.value;
+		// 对用户输入过滤
+		value=value.replace(/[/*+\-?.^${}\][()|\\,:'"!]/g,"");
 		this.props.onChange(value);
 	}
 	render(){

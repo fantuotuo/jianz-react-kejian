@@ -135,9 +135,16 @@ class App extends React.Component{
 			blks.push({id:"",cnName:"...",type:3,pic:"",index:-1});
 		}
 		blksPre=blks.length;
-		let keywords=this.state.keywords;
+		let reg=new RegExp("","i");
+		// 防止用户输入特殊代码导致程序中断
+		try{
+			reg=new RegExp(this.state.keywords,"i");
+		}catch(e){
+			console.log(e);
+		}
+
 		blks=blks.filter((obj)=>{
-			return (obj.id.match(keywords) || obj.cnName.match(keywords)) || obj.id==="";
+			return (obj.id.match(reg) || obj.cnName.match(reg)) || obj.id==="";
 		});
 		let blksHide=blksPre-blks.length;
 
