@@ -1,0 +1,241 @@
+$width-app:1280px;
+body{
+	min-width:$width-app;
+}
+.kt-app{
+	width:1280px;
+	margin:0 auto;
+}
+.kt-header{
+	$c1:#ff0000;
+	$c2:#4f81bd;
+	$c3:#00b050;
+	$c4:#ffc000;
+
+	position:relative;
+	
+	.btn-group .btn{
+		padding:10px 16px;
+	}
+	.kt-header-top{
+		height:120px;
+		padding-top:30px;
+
+		>*{
+			float:left;
+		}
+		&:after{
+			content:"";
+			display:block;
+			clear:both;
+			height:0;
+			overflow:hidden;
+			visibility:hidden;
+		}
+		.kt-logo{
+			margin-left:70px;
+			margin-top:18px;
+			width:57px;
+		}
+		.kt-title{
+			width:660px;
+			height:90px;
+			line-height:90px;
+			font-weight: 600;
+		    font-size: 4.6rem;
+		    text-align: center;
+			color:#585858
+		}
+		.kt-header-blks{
+			margin-top:24px;
+			$c1:#c86a6a;
+			$c2:#328899;
+			$c3:#77943a;
+			$c4:#999999;
+			.kt-header-blk{
+				$width-blk:110px;
+				$height-blk:40px;
+				$width-border:2px;
+				width:$width-blk;
+				height:$height-blk;
+				line-height:$height-blk - 2*$width-border;
+				border: $width-border solid #555;
+				text-shadow:1px 1px 3px #000000;
+
+				float:left;
+				margin-left:($width-app - 70px - 57px - 660px -4*$width-blk)/3;
+				color:#fff;
+				font-weight: 600;
+				font-size:1.8rem;
+				text-align:center;
+
+				&:first-child{
+					margin-left:0;
+				}
+				&.c1{
+					background:$c1;
+				}
+				&.c2{
+					background:$c2;
+				}
+				&.c3{
+					background:$c3;
+				}
+				&.c4{
+					background:$c4;
+				}
+			}
+
+			&:after{
+				content:"";
+				display:block;
+				clear:both;
+				height:0;
+				overflow:hidden;
+				visibility:hidden;
+			}
+		}
+	}
+	.kt-hr{
+		width:100%;
+		height:2px;
+		background:#0e0e0e;
+	}
+}
+
+.kt-cards{
+		$w-card-border:2px;
+		$w-card:226px;
+		$h-card:200px;
+		$h-title:40px;
+		$mar-left:12px;
+	position:relative;
+	overflow:hidden;
+	transition:all 0.3s ease-out;
+	
+	.kt-card-wrapper{
+		// position:absolute;
+		width:$width-app/5;
+		padding:15px ($width-app/5 - $w-card)/2;
+		overflow:hidden;
+		float:left;
+		// transition:all 0.3s ease-out;
+	}
+	.kt-card{
+		$c0-border:#c0504d;
+		$c0-bg:#ca6a68;
+		$c1-border:#215968;
+		$c1-bg:#31859c;
+		$c2-border:#75913b;
+		$c2-bg:#819d45;
+		$c3-border:#959595;
+		$c3-bg:#a1a1a1;
+
+		
+
+		width:$w-card;
+		height:$h-card;
+		// margin-left:($width-app - 5*$w-card - 2*$mar-left)/4;
+		// margin-top:25px;
+		// float:left;
+		cursor:pointer;
+
+		border:$w-card-border solid $c0-border;
+		background:#fff;
+		transition:all 0.3s ease-out;
+		&:hover{
+			background:darken(#fff,15%);
+		}
+		
+		a{
+			text-decoration:none!important;
+		}
+		a:hover{
+			text-decoration:none;
+		}
+		&.c0{
+			border-color:$c0-border;
+		}
+		&.c1{
+			border-color:$c1-border;
+		}
+		&.c2{
+			border-color:$c2-border;
+		}
+		&.c3{
+			border-color:$c3-border;
+		}
+		&.first{
+			margin-left:$mar-left;
+		}
+		.pic{
+			height:$h-card - $h-title - 2*$w-card-border;
+			overflow:hidden;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		.title{
+			overflow:hidden;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+
+			border-top:$w-card-border solid $c1-border;
+			background:$c1-bg;
+			height:$h-title;
+			line-height:$h-title;
+			text-align:center;
+			color:#fff;
+			font-size:2rem;
+			text-shadow:1px 1px 3px #000000;
+
+			transition:all 0.3s ease-out;
+			.beta{
+				font-size:1.6rem;
+				color:#ffc107;
+			}
+		}
+		&.c0 .title{
+			border-color:$c0-border;
+			background:$c0-bg;
+		}
+		&.c1 .title{
+			border-color:$c1-border;
+			background:$c1-bg;
+		}
+		&.c2 .title{
+			border-color:$c2-border;
+			background:$c2-bg;
+		}
+		&.c3 .title{
+			border-color:$c3-border;
+			background:$c3-bg;
+		}
+		&.c0:hover .title{
+			background:darken($c0-bg,15%);
+		}
+		&.c1:hover .title{
+			background:darken($c1-bg,10%);
+		}
+		&.c2:hover .title{
+			background:darken($c2-bg,10%);
+		}
+		&.c3:hover .title{
+			background:darken($c3-bg,10%);
+		}
+	}
+	&:after{
+		content:"";
+		display:block;
+		clear:both;
+		height:0;
+		overflow:hidden;
+		visibility:hidden;
+	}
+}
+
+.kt-footer{
+	text-align:center;
+	padding: 20px 0;
+    line-height: 2rem;
+}
