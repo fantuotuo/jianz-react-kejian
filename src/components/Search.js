@@ -7,9 +7,15 @@ class SearchComp extends React.Component{
 		value=value.replace(/[/*+\-?.^${}\][()|\\,:'"!]/g,"");
 		this.props.onChange(value);
 	}
+	onKeyUp(e){
+		if(e.keyCode===13){
+			// 按下回车键
+			this.props.onClick();
+		}
+	}
 	render(){
 		return (
-			<form className="form-inline" style={{'marginLeft':'15px',marginTop:'10px'}}>
+			<form action="" className="form-inline" style={{'marginLeft':'15px',marginTop:'10px'}}>
 				<div className="form-group">
 					<label htmlFor="search">关键字:</label>
 					<input 
@@ -19,7 +25,9 @@ class SearchComp extends React.Component{
 						type="text" 
 						value={this.props.keywords_inner}
 						placeholder="请输入搜索关键字"
+						onKeyUp={(e)=>{this.onKeyUp(e)}}
 					/>
+					<input type="text" style={{display:"none"}} />
 				</div>
 
 				<button 

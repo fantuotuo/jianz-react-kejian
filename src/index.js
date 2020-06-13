@@ -76,7 +76,7 @@ class App extends React.Component{
 			{id:"C29",cnName:"摩斯密码",type:0,pic:""},
 			{id:"C101",cnName:"边听边看[Beta]",type:0,pic:""},
 
-			// {id:"D14",cnName:"AO星[Beta]",type:3,pic:""},
+			{id:"D14",cnName:"AO星[Beta]",type:3,pic:""},
 			{id:"D15",cnName:"点中心",type:3,pic:""},
 			{id:"D16",cnName:"镜像练习",type:3,pic:""},
 			{id:"D18",cnName:"皮亚诺线",type:3,pic:""},
