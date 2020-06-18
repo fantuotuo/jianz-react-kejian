@@ -101,12 +101,12 @@ class App extends React.Component{
 	onClickSearch(){
 		this.setState({
 			keywords:this.state.keywords_inner
-		})
+		});
 	}
 	onChangeSearch(keywords){
 		this.setState({
 			keywords_inner:keywords
-		})
+		});
 	}
 	onClickSearchClear(){
 		this.setState({
@@ -135,16 +135,17 @@ class App extends React.Component{
 			blks.push({id:"",cnName:"...",type:3,pic:"",index:-1});
 		}
 		blksPre=blks.length;
-		let reg=new RegExp("","i");
-		// 防止用户输入特殊代码导致程序中断
-		try{
-			reg=new RegExp(this.state.keywords,"i");
-		}catch(e){
-			console.log(e);
-		}
+		let key=this.state.keywords.toLowerCase();
+		// let reg=new RegExp("","i");
+		// // 防止用户输入特殊代码导致程序中断
+		// try{
+		// 	reg=new RegExp(this.state.keywords,"i");
+		// }catch(e){
+		// 	console.log(e);
+		// }
 
 		blks=blks.filter((obj)=>{
-			return (obj.id.match(reg) || obj.cnName.match(reg)) || obj.id==="";
+			return (obj.id.toLowerCase().match(key) || obj.cnName.toLowerCase().match(key)) || obj.id==="";
 		});
 		let blksHide=blksPre-blks.length;
 
@@ -155,7 +156,7 @@ class App extends React.Component{
 			n=index===0?this.state.blks.length:n;
 
 			return {name:obj.name,n,active:index===this.state.group};
-		})
+		});
 
 		return (
 			<div className="kt-app">
@@ -171,7 +172,7 @@ class App extends React.Component{
 				/>
 				<Cards 
 					blks={blks}
-					onChangeGroup={()=>{this.setState({group:0});}} 
+					onChangeGroup={()=>{this.onChangeGroup(0);}} 
 				/>
 			</div>
 		);

@@ -4,11 +4,11 @@ class SearchComp extends React.Component{
 	onChange(e){
 		let value=e.target.value;
 		// 对用户输入过滤
-		value=value.replace(/[/*+\-?.^${}\][()|\\,:'"!]/g,"");
+		// value=value.replace(/[/*+\-?.^${}\][()|\\,:'"!]/g,"");
 		this.props.onChange(value);
 	}
 	onKeyUp(e){
-		if(e.keyCode===13){
+		if(e.keyCode===13 || e.which===13){
 			// 按下回车键
 			this.props.onClick();
 		}
